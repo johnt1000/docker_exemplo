@@ -248,6 +248,6 @@ Execute o comando:
 docker-compose up
 ```
 
-Sua aplicação SPA está disponível em [http://localhost:8080](http://localhost:8080).
-
-Sua aplicação API está disponível em [http://localhost:3000/explorer](http://localhost:3000/explorer).
+Acesso as aplicações:
+- Sua aplicação SPA está disponível em [http://localhost:8080](http://localhost:8080).
+- Sua aplicação API está disponível em [http://localhost:3000/explorer](http://localhost:3000/explorer).
