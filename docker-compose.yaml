@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  
+  spa:
+    image: johnt1000/vue:1.0
+    ports:
+      - 8080:8080
+    build:
+      context: ./spa
+    env_file:
+      - .env
+    volumes:
+      - ./spa:/app
+  
+  api:
+    image: johnt1000/loopback:1.0
+    ports:
+      - 3000:3000
+    build:
+      context: ./api
+    env_file:
+      - .env
+    volumes:
+      - ./api:/app

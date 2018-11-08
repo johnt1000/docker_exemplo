@@ -1,0 +1,27 @@
+{
+  "name": "Carro",
+  "plural": "Carros",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "ano": {
+      "type": "number",
+      "required": true
+    },
+    "preco": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
