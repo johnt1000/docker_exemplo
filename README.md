@@ -247,7 +247,7 @@ services:
 
 Execute o comando:
 ``` sh
-docker-compose up
+docker-compose up --build
 ```
 
 Acesso as aplicações:
