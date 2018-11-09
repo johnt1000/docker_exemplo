@@ -14,8 +14,8 @@ services:
     volumes:
       - ./spa:/app
       - /app/node_modules
-    # depends_on:
-    #   - "api"
+    depends_on:
+      - "api"
   
   api:
     image: johnt1000/loopback:1.0
