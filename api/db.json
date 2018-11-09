@@ -1,0 +1,21 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Carro": 3
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Carro": {
+      "1": "{\"nome\":\"Fiat Uno\",\"ano\":2000,\"preco\":8000,\"id\":1}",
+      "2": "{\"nome\":\"Siena\",\"ano\":2002,\"preco\":10000,\"id\":2}"
+    }
+  }
+}
