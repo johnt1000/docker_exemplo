@@ -1,7 +1,7 @@
 # APP Carros
 
 ## Descrição
-Projeto para a disciplica Tópicos Avançados em Engenharia de Software III, ministrada no programa de mestrado profissional, turma 2018, pelo Professor Dr. Silvio Costa Sampaio.
+Projeto para a disciplina Tópicos Avançados em Engenharia de Software III, ministrada no programa de mestrado profissional, turma 2018, pelo Professor Dr. Silvio Costa Sampaio.
 
 ## Atividade
 Suponha que você seja um desenvolvedor Web e necessita de uma estrutura ágil e dinâmica para testar seus programas, sem ter a necessidade de configurar seu ambiente toda vez que desenvolve uma aplicação:
