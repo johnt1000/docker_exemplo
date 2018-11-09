@@ -8,10 +8,14 @@ services:
       - 8080:8080
     build:
       context: ./spa
+    command: npm run serve
     env_file:
       - .env
     volumes:
       - ./spa:/app
+      - /app/node_modules
+    depends_on:
+      - "api"
   
   api:
     image: johnt1000/loopback:1.0
@@ -19,7 +23,9 @@ services:
       - 3000:3000
     build:
       context: ./api
+    command: npm start
     env_file:
       - .env
     volumes:
       - ./api:/app
+      - /app/node_modules

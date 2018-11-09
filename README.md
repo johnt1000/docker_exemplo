@@ -126,19 +126,15 @@ Sua aplicação está disponível em [http://localhost:8080](http://localhost:80
 O Dockerfile define o container e as definições que serão usada para iniciar o aplicativo.
 ```Dockerfile
 # spa/Dockerfile
-
-FROM node:8 # container base
-
-# Instala CLI
-CMD ["npm", "install", "-g", "@vue/cli"]
- # Instala serve
-CMD ["npm", "install", "-g", "@vue/cli-service-global"]
+FROM node:8-alpine
 # Define diretório que serão executados os próximos comandos
 WORKDIR /app
+# Arquivos que define as dependências
+COPY package.json .
 # Instala dependências do aplicativo
-CMD ["npm", "install"]
-# Inicia servidor
-CMD ["npm", "run", "serve"]
+RUN ["npm", "install"]
+# Porta que será exposta
+EXPOSE 8080
 ```
 O Dockerfile automatiza os comandos que foram usados para a criação o aplicativo SPA. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
 
@@ -199,16 +195,15 @@ Sua aplicação está disponível em [http://localhost:3000/explorer](http://loc
 O Dockerfile define o container e as definições que serão usada para iniciar o aplicativo.
 ```Dockerfile
 # api/Dockerfile
-FROM node:8
-
-# Instala CLI
-CMD ["npm", "install", "-g", "loopback-cli"]
+FROM node:8-alpine
 # Define diretório que serão executados os próximos comandos
 WORKDIR /app
+# Arquivos que define as dependências
+COPY package.json .
 # Instala dependências do aplicativo
-CMD ["npm", "install"]
-# Inicia servidor
-CMD ["npm", "start"]
+RUN ["npm", "install"]
+# Porta que será exposta
+EXPOSE 3000
 ```
 O Dockerfile automatiza os comandos que foram usados para a criação da API. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
 
@@ -226,10 +221,14 @@ services:
       - 8080:8080
     build: # aponta Dockerfile
       context: ./spa
+    command: npm run serve # comando apra iniciar SPA
     env_file: # arquivo com variáveis globais
       - .env
-    volumes: # volumes que serão "espelhados" no container
+    volumes: # volumes que serão "espelhados"
       - ./spa:/app
+      - /app/node_modules
+    depends_on: # dependência de outros containers
+      - "api"
   
   api:
     image: johnt1000/loopback:1.0 # imagem (build)
@@ -237,10 +236,12 @@ services:
       - 3000:3000
     build: # aponta Dockerfile
       context: ./api
+    command: npm start # comando apra iniciar API
     env_file: # arquivo com variáveis globais
       - .env
     volumes: # volumes que serão "espelhados" no container
       - ./api:/app
+      - /app/node_modules
 ```
 
 Execute o comando:

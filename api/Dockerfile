@@ -1,6 +1,9 @@
-FROM node:8
+FROM node:8-alpine
 
-CMD ["npm", "install", "-g", "loopback-cli"]
 WORKDIR /app
-CMD ["npm", "install"]
-CMD ["npm", "start"]
+
+COPY package.json .
+
+RUN ["npm", "install"]
+
+EXPOSE 3000

@@ -1,8 +1,9 @@
-FROM node:8
+FROM node:8-alpine
 
-CMD ["npm", "install", "-g", "@vue/cli"]
-CMD ["npm", "install", "-g", "@vue/cli-service-global"]
-CMD ["npm", "install"]
 WORKDIR /app
-CMD ["npm", "install"]
-CMD ["npm", "run", "serve"]
+
+COPY package.json .
+
+RUN ["npm", "install"]
+
+EXPOSE 8080
