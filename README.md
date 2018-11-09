@@ -28,7 +28,8 @@ Suponha que você seja um desenvolvedor Web e necessita de uma estrutura ágil e
 1. Instalação do [Framework Loopback](https://loopback.io/);
 1. Criando aplicativo e configurando container para uso do [VueJs](https://vuejs.org/);
 1. Criando API e configurando container para uso do [Loopback](https://loopback.io/);
-1. Configuração [docker-compose](https://docs.docker.com/compose/) para orquestração de containers.
+1. Configuração [docker-compose](https://docs.docker.com/compose/) para orquestração de containers;
+1. Teste de comunicação entre as aplicações.
 
 ### Instalação do Docker
 Para a instalação simplificada do Docker no macOS, existem duas formas:
@@ -252,3 +253,13 @@ docker-compose up
 Acesso as aplicações:
 - Sua aplicação SPA está disponível em [http://localhost:8080](http://localhost:8080).
 - Sua aplicação API está disponível em [http://localhost:3000/explorer](http://localhost:3000/explorer).
+
+
+### Teste de comunicação
+Acesse a API no endereço [http://localhost:3000/explorer/#!/Carro/Carro_create](http://localhost:3000/explorer/#!/Carro/Carro_create) e crie um novo carro.
+
+![Novo carro](https://image.ibb.co/mQUkiV/new-carro.png)
+
+Acesse a SPA no endereço [http://localhost:8080/](http://localhost:8080/) e veja seu novo carro na lista.
+
+![Lista de carro](https://image.ibb.co/dVgbqA/spa-carros.png)
