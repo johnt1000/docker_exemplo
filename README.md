@@ -137,7 +137,7 @@ RUN ["npm", "install"]
 # Porta que será exposta
 EXPOSE 8080
 ```
-O Dockerfile automatiza os comandos suportar o aplicativo SPA. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
+O Dockerfile automatiza os comandos para suportar o aplicativo SPA. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
 
 ### Criando API
 Entre na pasta raiz do seu projeto e use o CLI do Loopback para criar a API com o seguinte comando:
