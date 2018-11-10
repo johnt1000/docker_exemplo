@@ -124,7 +124,7 @@ Sua aplicação está disponível em [http://localhost:8080](http://localhost:80
 ![App VueJs](https://image.ibb.co/ibiK7q/vue-app.png)
 
 #### Dockerfile (SPA)
-O Dockerfile define o container e as definições que serão usada para iniciar o aplicativo.
+O Dockerfile define o container e suas configurações personalizadas.
 ```Dockerfile
 # spa/Dockerfile
 FROM node:8-alpine
@@ -137,7 +137,7 @@ RUN ["npm", "install"]
 # Porta que será exposta
 EXPOSE 8080
 ```
-O Dockerfile automatiza os comandos que foram usados para a criação o aplicativo SPA. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
+O Dockerfile automatiza os comandos suportar o aplicativo SPA. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
 
 ### Criando API
 Entre na pasta raiz do seu projeto e use o CLI do Loopback para criar a API com o seguinte comando:
@@ -193,7 +193,7 @@ Sua aplicação está disponível em [http://localhost:3000/explorer](http://loc
 ![API Loopback](https://image.ibb.co/mrbgnq/loopback-api.png)
 
 #### Dockerfile (API)
-O Dockerfile define o container e as definições que serão usada para iniciar o aplicativo.
+O Dockerfile define o container e suas configurações personalizadas.
 ```Dockerfile
 # api/Dockerfile
 FROM node:8-alpine
@@ -206,7 +206,7 @@ RUN ["npm", "install"]
 # Porta que será exposta
 EXPOSE 3000
 ```
-O Dockerfile automatiza os comandos que foram usados para a criação da API. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
+O Dockerfile automatiza os comandos para suportar a API. O script Dockerfile será usado posteriormente pelo [docker-compose](https://docs.docker.com/compose/).
 
 ### Configurando docker-compose
 Crie um arquivo na raiz do projeto com o nome docker-compose.yaml com o seguinte conteúdo:
