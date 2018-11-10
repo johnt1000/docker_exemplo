@@ -28,7 +28,7 @@ Suponha que você seja um desenvolvedor Web e necessita de uma estrutura ágil e
 1. Instalação do [Framework Loopback](https://loopback.io/);
 1. Criando aplicativo e configurando container para uso do [VueJs](https://vuejs.org/);
 1. Criando API e configurando container para uso do [Loopback](https://loopback.io/);
-1. Configuração [docker-compose](https://docs.docker.com/compose/) para "orquestração de containers;
+1. Configuração [docker-compose](https://docs.docker.com/compose/) para "orquestração" de containers;
 1. Teste de comunicação entre as aplicações.
 
 ### Instalação do Docker
